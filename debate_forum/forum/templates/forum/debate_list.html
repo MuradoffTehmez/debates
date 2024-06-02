@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debate Topics</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'forum/style.css' %}">
+</head>
+<body>
+    <h1>Debate Topics</h1>
+    <ul>
+        {% for topic in topics %}
+            <li><a href="{% url 'debate_detail' topic.pk %}">{{ topic.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_debate' %}">Create a new debate</a>
+</body>
+</html>
